@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Self Assessment Test</title>
+<link rel="stylesheet" href="test.css">
+
+</head>
+<body>
+<div id="main">
+<div id="header">
+</div>
+<form id="form1">
+
+<img src="heart.jpg" alt="COVID-19" align="center" height="300px" width="650px">
+
+
+<h3> <i><u>STAY ALERT!!!</u></i></h3>
+<h3><i><u>Answer the following questions to calculate your risk score!</u> </i> </h3>
+
+<h2>Which age group do you belong?</h2>
+<label for="gr_string"><input type="radio" name="group" value="0" id="gr_string" />1-12 years</label>
+<label for="gr_join"><input type="radio" name="group" value="0" id="gr_join" />13-30 years</label>
+<label for="gr_info"><input type="radio" name="group" value="0" id="gr_info" />31-60 years</label>
+<label for="gr_condition"><input type="radio" name="group"  value="16" id="gr_condition" />60 above</label>
+
+<h2>Are you experiencing any of these symptoms?</h2>
+<p> Chest pain or discomfort.
+Feeling weak, light-headed, or faint. 
+Pain or discomfort in the jaw, neck, or back.
+Pain or discomfort in one or both arms or shoulders.
+Shortness of breath. </p>
+<label for="sym_string"><input type="radio" name="symptoms" value="16" id="sym_string" />Yes </label>
+<label for="sym_join"><input type="radio" name="symptoms" value="0" id="sym_join" />No</label>
+<label for="sym_info"><input type="radio" name="symptoms" value="16" id="sym_info" />Somewhat</label>
+
+<h2>Do you have any of these? </h2>
+<p> Hypertension, Diabetes, Lung Disease, Cancer,etc? </p>
+<label for="dis_string"><input type="radio" name="dis" value="16" id="dis_string"/>Yes</label>
+<label for="dis_join"><input type="radio" name="dis" value="0" id="dis_join"/>No</label>
+
+
+<h2>Do you Smoke, drink alocohol, eat tobacco or have drugs?</h2>
+<label for="tra_string"><input type="radio" name="tra" value="16" id="tra_string" />Yes</label>
+<label for="tra_join"><input type="radio" name="tra" value="0" id="tra_join" />No</label>
+
+<h2>How is your relationship with Food?</h2>
+<label for="one_string"><input type="radio" name="one" value="0" id="one_string" />I eat healthy everyday.</label>
+<label for="one_join"><input type="radio" name="one" value="16" id="one_join" />I love eating junk food.</label>
+<label for="one_info"><input type="radio" name="one" value="0" id="one_info" /> Junk ocassionally.</label>
+
+<h2> Do you exercise daily? </h2>
+<label for="vac_string"><input type="radio" name="vac" value="0" id="vac_string" />Yes</label>
+<label for="vac_join"><input type="radio" name="vac" value="16" id="vac_join" />No</label>
+
+
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+    
+<p> Heart-Disease and stroke-your calculated risk score :  <span id="risk">__</span></p>
+<p id="riskk"></p>
+
+
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+	   group = parseInt(document.querySelector('input[name = "group"]:checked').value);
+       symptoms = parseInt(document.querySelector('input[name = "symptoms"]:checked').value);
+	   dis = parseInt(document.querySelector('input[name = "dis"]:checked').value);
+	   tra= parseInt(document.querySelector('input[name = "tra"]:checked').value);
+	   one = parseInt(document.querySelector('input[name = "one"]:checked').value);
+	   vac = parseInt(document.querySelector('input[name = "vac"]:checked').value);
+	   
+	   
+	   result = group + symptoms + dis + tra + one + vac;
+	   
+	document.getElementById("risk").innerHTML = result;
+
+ grading = [
+	   {score:0,feedback:" Very Low, you are SAFE!!"},
+	   {score:16,feedback:" Low, stay safe!"},
+	   {score:32,feedback:"Moderate, take care!"},
+	   {score:48,feedback:" Slightly High, stay alert!"},
+	   {score:64,feedback:"High, get the check up done as soon as possible!!!"},
+	   {score:80,feedback:"High, get the check up done as soon as possible!!!"},
+	   {score:96,feedback:"Very High, get the check up done as soon as possible!!!"}
+	   ];
+	  
+for(i=0; i<grading.length; i++) {
+    if(result == grading[i].score) {
+    result2 = grading[i].feedback;
+	  }
+	  }
+
+
+document.getElementById("riskk").innerHTML = result2; 
+
+return false; 
+}
+
+</script>
+
+
+</div>
+</body>
+</html>

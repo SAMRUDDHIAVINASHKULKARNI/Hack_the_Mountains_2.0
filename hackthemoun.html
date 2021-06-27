@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Hack The Mountains 2.0</title>
+<link rel="stylesheet" href="hackthemoun.css">
+<script src="pg1.js"></script>
+<link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="about.html">About Us</a>
+  <a href="heart.html">About your Heart</a>
+  <a href="test.html">Self-Assessment</a>
+   <a href="chatbot1.html">Book Appointment</a>
+	<a href="contact1.html">Contact</a>
+	
+<div class="border"></div>
+	<!-- search bar right align-->
+        <div class="search">
+            <form action="#">
+                <input type="text"
+                    placeholder=" Search "
+                    name="search">
+                <button>
+                    <i class="fa fa-search"
+                        style="font-size: 18px;">
+                    </i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="main">
+ <h1><i><b><u>Intense Heart Care Hospital</b></u></i></h1>
+
+  <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="Slideshow fade">
+    <div class="numbertext"></div>
+    <img src="hos1.jpg" style="width:90%">
+    
+  </div>
+
+  <div class="Slideshow fade">
+    <div class="numbertext"></div>
+    <img src="hos4.jpg" style="width:90%">
+    
+  </div>
+
+  <div class="Slideshow fade">
+    <div class="numbertext"></div>
+    <img src="hos3.jpg" style="width:90%">
+    
+  </div>
+   <div class="Slideshow fade">
+    <div class="numbertext"></div>
+    <img src="hos2.jpg" style="width:90%">
+   
+  </div>
+
+  
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+<script>
+var slideIndexno = 0;
+showSlidesonscreen();
+
+function showSlidesonscreen() {
+  var s;
+  var slides = document.getElementsByClassName("Slideshow");
+  for (s = 0; s < slides.length; s++) {
+    slides[s].style.display = "none";
+  }
+  slideIndexno++;
+  if (slideIndexno > slides.length) {slideIndexno = 1}
+  slides[slideIndexno-1].style.display = "block";
+  setTimeout(showSlidesonscreen, 4000); // Change image every 2 seconds
+}
+</script>
+
+<h4>24/7 service</h4> 
+<h4>Personalized and specialized Care for patients</h4>
+<h4>Ultra modern technologies</h4>
+<h4>Quality Healthcare Services</h4>
+<p>Intense Heart Care has very highly qualified and vastly experienced team of Super specialists, Specialists and Consultants who offer dedicated service round the clock. 
+Intense heart Care is committed in providing Quality Healthcare and is back up with hi tech equipment and ultra-modern technologies.</p>
+</div>
+</body>
